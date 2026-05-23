@@ -474,31 +474,20 @@ window.unit7 = {
               <div class="tank-face inner top" id="tank-inner-top-72"></div>
               <div class="tank-face inner bottom" id="tank-inner-bottom-72"></div>
 
-              <!-- 3D 注入水體 (半透明深藍立方體，高度由 JS 動態調整) -->
-              <div id="sandbox-water-3d" style="
+              <!-- 3D 注入水面 (半透明藍鏡面水光效果，由 JS 動態調整高度與尺寸) -->
+              <div id="sandbox-water-surface" style="
                 position: absolute;
-                background: linear-gradient(to top, rgba(0, 162, 255, 0.5) 0%, rgba(0, 242, 254, 0.45) 100%);
-                border: 1px solid rgba(0, 242, 254, 0.7);
-                bottom: 0;
-                transform-style: preserve-3d;
                 left: calc(50% - var(--w-in)/2);
+                top: calc(50% - var(--d-in)/2);
                 width: var(--w-in);
-                height: var(--h-water);
-                transition: height 0.3s ease-out;
-              ">
-                <!-- 水的 3D 頂蓋 (藍色鏡面水光效果) -->
-                <div id="sandbox-water-surface" style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: var(--d-in);
-                  background: rgba(0, 242, 254, 0.75);
-                  transform: rotateX(90deg) translateZ(calc(var(--d-in)/2));
-                  transform-origin: top center;
-                  box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
-                "></div>
-              </div>
+                height: var(--d-in);
+                background: rgba(0, 242, 254, 0.7);
+                transform: rotateX(90deg) translateZ(0px);
+                transform-style: preserve-3d;
+                box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+                pointer-events: none;
+                z-index: 10;
+              "></div>
 
             </div>
           </div>
@@ -538,7 +527,6 @@ window.unit7 = {
   bindSub72Events() {
     const tank = document.getElementById('sandbox-tank-72');
     const innerTank = document.getElementById('sandbox-inner-tank-72');
-    const water3D = document.getElementById('sandbox-water-3d');
     const waterSurface = document.getElementById('sandbox-water-surface');
 
     const sideSlider = document.getElementById('slider-side-72');
@@ -674,81 +662,143 @@ window.unit7 = {
         const baseArea = W * W;
 
         // Steps for double-multiplier
-        const steps = [
-          {
-            text: `長方體容積的公式為：<strong>長 × 寬 × 高</strong>。讓我們先算出底部的面積（<strong>長 × 寬</strong>）：<strong>${W} × ${W}</strong>。`,
-            speak: `長方體容積的公式為長乘寬乘高。讓我們先算出底部的面積長乘寬，也就是 ${W} 乘以 ${W}。`,
-            html: `
-              <table style="font-size:0.95rem; width:100%;">
-                <tr class="unit-label-row"><td colspan="3" style="text-align:center; color:var(--primary-cyan);">第一階段：求底面積 (${W} × ${W})</td></tr>
-                <tr><td></td><td class="calc-glow-cyan">${W}</td><td>(長)</td></tr>
-                <tr><td class="op-cell calc-glow-pink">×</td><td class="calc-glow-pink">${W}</td><td>(寬)</td></tr>
-                <tr class="border-top"><td colspan="3" style="text-align:center; font-size:0.75rem; color:var(--text-muted); font-style:italic;">步驟 1 / 6：列出底面積直式算式</td></tr>
-              </table>
-            `
-          },
-          {
-            text: `<strong>個位數相乘！</strong> 用乘數個位數 <strong>7</strong> 乘以 <strong>17</strong>，計算 $7 \\times 7 = 49$（寫 9 進位 4，進位發光），$7 \\times 10 = 70$（加進位 40 得 110），第一層得出 <strong>119</strong>！`,
-            speak: `個位數相乘。用個位數 7 乘以 17 等於 119，寫在第一層。`,
-            html: `
-              <table style="font-size:0.95rem; width:100%;">
-                <tr><td></td><td>17</td><td></td></tr>
-                <tr><td class="op-cell">×</td><td class="calc-glow-pink">7</td><td></td></tr>
-                <tr class="border-top"><td></td><td class="calc-glow-green">119</td><td>(7 × 17)</td></tr>
-              </table>
-            `
-          },
-          {
-            text: `<strong>十位數相乘！</strong> 用乘數十位數 <strong>10</strong> 乘以 <strong>17</strong>，得出 <strong>170</strong>，寫在第二層，個位數記得靠右對齊（補0省略或補寫）！`,
-            speak: `十位數相乘。用十位數 1 乘以 17 等於 170，寫在第二層。`,
-            html: `
-              <table style="font-size:0.95rem; width:100%;">
-                <tr><td></td><td>17</td><td></td></tr>
-                <tr><td class="op-cell">×</td><td class="calc-glow-pink">10</td><td></td></tr>
-                <tr class="border-top"><td></td><td class="calc-dim">119</td><td></td></tr>
-                <tr><td></td><td class="calc-glow-green">170</td><td>(10 × 17)</td></tr>
-              </table>
-            `
-          },
-          {
-            text: `<strong>求出底面積！</strong> 將第一層 <strong>119</strong> 和第二層 <strong>170</strong> 相加，得到底面積 <strong>${baseArea} 平方公分 (cm²)</strong>！這就是水箱底部的平面大小！`,
-            speak: `求出底面積。將第一層和第二層相加，得到底面積 ${baseArea} 平方公分。`,
-            html: `
-              <table style="font-size:0.95rem; width:100%;">
-                <tr><td></td><td>17</td><td></td></tr>
-                <tr><td class="op-cell">×</td><td>17</td><td></td></tr>
-                <tr class="border-top"><td></td><td>119</td><td></td></tr>
-                <tr><td>+</td><td>170</td><td></td></tr>
-                <tr class="border-top border-double-bottom" style="color:var(--accent-green); font-weight:800;"><td></td><td class="calc-glow-green">${baseArea}</td><td>cm² (底面積)</td></tr>
-              </table>
-            `
-          },
-          {
-            text: `<strong>第二階段：底面積 × 高！</strong> 現在我們用求得的底面積 <strong>${baseArea}</strong> 乘以水箱高 <strong>${H} 公分</strong>，列出第二階段的乘法直式！`,
-            speak: `第二階段，底面積乘以高。我們用求得的底面積 ${baseArea} 乘以水箱的高 ${H} 公分。`,
-            html: `
-              <table style="font-size:0.95rem; width:100%;">
-                <tr class="unit-label-row"><td colspan="3" style="text-align:center; color:var(--primary-cyan);">第二階段：底面積 × 高 (${baseArea} × ${H})</td></tr>
-                <tr><td></td><td class="calc-glow-cyan">${baseArea}</td><td>(底面積)</td></tr>
-                <tr><td class="op-cell calc-glow-pink">×</td><td class="calc-glow-pink">${H}</td><td>(高度)</td></tr>
-                <tr class="border-top"><td colspan="3" style="text-align:center; font-size:0.75rem; color:var(--text-muted); font-style:italic;">步驟 5 / 6：列出第二階段算式</td></tr>
-              </table>
-            `
-          },
-          {
-            text: `<strong>得出最終容積！</strong> 經由詳細計算，我們得出最終的容積為 <strong>${vol.toFixed(0)} 立方公分 (cm³)</strong>！這相當於最多可以灌入 <strong>${(vol/1000).toFixed(3)} 公升 (L)</strong> 的水！`,
-            speak: `得出最終容積。經由詳細計算，我們得出最終的容積為 ${vol.toFixed(0)} 立方公分，相當於 ${(vol/1000).toFixed(3)} 公升。恭喜你完成雙階段容積直式計算！`,
-            html: `
-              <table style="font-size:0.95rem; width:100%;">
-                <tr><td></td><td>${baseArea}</td><td></td></tr>
-                <tr><td class="op-cell">×</td><td>${H}</td><td></td></tr>
-                <tr class="border-top"><td></td><td>2023</td><td>(7 × 289)</td></tr>
-                <tr><td>+</td><td>2890</td><td>(10 × 289)</td></tr>
-                <tr class="border-top border-double-bottom" style="color:var(--accent-green); font-weight:800;"><td></td><td class="calc-glow-green">${vol.toFixed(0)}</td><td>cm³ (容積)</td></tr>
-              </table>
-            `
-          }
-        ];
+        const u1 = W % 10;
+        const p1 = W * u1;
+        const t1 = Math.floor(W / 10);
+        const p2 = W * t1 * 10;
+
+        const u2 = H % 10;
+        const p3 = baseArea * u2;
+        const t2 = Math.floor(H / 10);
+        const p4 = baseArea * t2 * 10;
+
+        let steps = [];
+        if (W >= 10) {
+          steps = [
+            {
+              text: `長方體容積的公式為：<strong>長 × 寬 × 高</strong>。讓我們先算出底部的面積（<strong>長 × 寬</strong>）：<strong>${W} × ${W}</strong>。`,
+              speak: `長方體容積的公式為長乘寬乘高。讓我們先算出底部的面積長乘寬，也就是 ${W} 乘以 ${W}。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr class="unit-label-row"><td colspan="3" style="text-align:center; color:var(--primary-cyan);">第一階段：求底面積 (${W} × ${W})</td></tr>
+                  <tr><td></td><td class="calc-glow-cyan">${W}</td><td>(長)</td></tr>
+                  <tr><td class="op-cell calc-glow-pink">×</td><td class="calc-glow-pink">${W}</td><td>(寬)</td></tr>
+                  <tr class="border-top"><td colspan="3" style="text-align:center; font-size:0.75rem; color:var(--text-muted); font-style:italic;">步驟 1 / 6：列出底面積直式算式</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>個位數相乘！</strong> 用乘數個位數 <strong>${u1}</strong> 乘以 <strong>${W}</strong>，第一層得出 <strong>${p1}</strong>！`,
+              speak: `個位數相乘。用個位數 ${u1} 乘以 ${W} 等於 ${p1}，寫在第一層。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr><td></td><td>${W}</td><td></td></tr>
+                  <tr><td class="op-cell">×</td><td>${W}</td><td></td></tr>
+                  <tr class="border-top"><td></td><td class="calc-glow-green">${p1}</td><td>(${u1} × ${W})</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>十位數相乘！</strong> 用乘數十位數 <strong>${t1 * 10}</strong> 乘以 <strong>${W}</strong>，得出 <strong>${p2}</strong>，寫在第二層，個位數記得靠右對齊（個位補 0）！`,
+              speak: `十位數相乘。用十位數 ${t1} 乘以 ${W} 等於 ${p2}，寫在第二層。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr><td></td><td>${W}</td><td></td></tr>
+                  <tr><td class="op-cell">×</td><td>${W}</td><td></td></tr>
+                  <tr class="border-top"><td></td><td class="calc-dim">${p1}</td><td></td></tr>
+                  <tr><td></td><td class="calc-glow-green">${p2}</td><td>(${t1 * 10} × ${W})</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>求出底面積！</strong> 將第一層 <strong>${p1}</strong> 和第二層 <strong>${p2}</strong> 相加，得到底面積 <strong>${baseArea} 平方公分 (cm²)</strong>！這就是水箱底部的平面大小！`,
+              speak: `求出底面積。將第一層和第二層相加，得到底面積 ${baseArea} 平方公分。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr><td></td><td>${W}</td><td></td></tr>
+                  <tr><td class="op-cell">×</td><td>${W}</td><td></td></tr>
+                  <tr class="border-top"><td></td><td>${p1}</td><td></td></tr>
+                  <tr><td>+</td><td>${p2}</td><td></td></tr>
+                  <tr class="border-top border-double-bottom" style="color:var(--accent-green); font-weight:800;"><td></td><td class="calc-glow-green">${baseArea}</td><td>cm² (底面積)</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>第二階段：底面積 × 高！</strong> 現在我們用求得的底面積 <strong>${baseArea}</strong> 乘以水箱高 <strong>${H} 公分</strong>，列出第二階段的乘法直式！`,
+              speak: `第二階段，底面積乘以高。我們用求得的底面積 ${baseArea} 乘以水箱的高 ${H} 公分。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr class="unit-label-row"><td colspan="3" style="text-align:center; color:var(--primary-cyan);">第二階段：底面積 × 高 (${baseArea} × ${H})</td></tr>
+                  <tr><td></td><td class="calc-glow-cyan">${baseArea}</td><td>(底面積)</td></tr>
+                  <tr><td class="op-cell calc-glow-pink">×</td><td class="calc-glow-pink">${H}</td><td>(高度)</td></tr>
+                  <tr class="border-top"><td colspan="3" style="text-align:center; font-size:0.75rem; color:var(--text-muted); font-style:italic;">步驟 5 / 6：列出 second 階段算式</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>得出最終容積！</strong> 經由詳細計算，我們得出最終的容積為 <strong>${vol.toFixed(0)} 立方公分 (cm³)</strong>！這相當於最多可以灌入 <strong>${(vol/1000).toFixed(3)} 公升 (L)</strong> 的水！`,
+              speak: `得出最終容積。經由詳細計算，我們得出最終的容積為 ${vol.toFixed(0)} 立方公分，相當於 ${(vol/1000).toFixed(3)} 公升。恭喜你完成雙階段容積直式計算！`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr><td></td><td>${baseArea}</td><td></td></tr>
+                  <tr><td class="op-cell">×</td><td>${H}</td><td></td></tr>
+                  <tr class="border-top"><td></td><td>${p3}</td><td>(${u2} × ${baseArea})</td></tr>
+                  <tr><td>+</td><td>${p4}</td><td>(${t2 * 10} × ${baseArea})</td></tr>
+                  <tr class="border-top border-double-bottom" style="color:var(--accent-green); font-weight:800;"><td></td><td class="calc-glow-green">${vol.toFixed(0)}</td><td>cm³ (容積)</td></tr>
+                </table>
+              `
+            }
+          ];
+        } else {
+          steps = [
+            {
+              text: `長方體容積的公式為：<strong>長 × 寬 × 高</strong>。讓我們先算出底部的面積（<strong>長 × 寬</strong>）：<strong>${W} × ${W}</strong>。`,
+              speak: `長方體容積的公式為長乘寬乘高。讓我們先算出底部的面積長乘寬，也就是 ${W} 乘以 ${W}。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr class="unit-label-row"><td colspan="3" style="text-align:center; color:var(--primary-cyan);">第一階段：求底面積 (${W} × ${W})</td></tr>
+                  <tr><td></td><td class="calc-glow-cyan">${W}</td><td>(長)</td></tr>
+                  <tr><td class="op-cell calc-glow-pink">×</td><td class="calc-glow-pink">${W}</td><td>(寬)</td></tr>
+                  <tr class="border-top"><td colspan="3" style="text-align:center; font-size:0.75rem; color:var(--text-muted); font-style:italic;">步驟 1 / 4：列出底面積直式算式</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>一步乘法求出底面積！</strong> 因為乘數 <strong>${W}</strong> 是個位數，我們直接相乘：<strong>${W} × ${W} ＝ ${baseArea} 平方公分 (cm²)</strong>！`,
+              speak: `一步乘法求出底面積。我們直接相乘，得到底面積 ${baseArea} 平方公分。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr><td></td><td>${W}</td><td></td></tr>
+                  <tr><td class="op-cell">×</td><td>${W}</td><td></td></tr>
+                  <tr class="border-top border-double-bottom" style="color:var(--accent-green); font-weight:800;"><td></td><td class="calc-glow-green">${baseArea}</td><td>cm² (底面積)</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>第二階段：底面積 × 高！</strong> 現在我們用求得的底面積 <strong>${baseArea}</strong> 乘以水箱高 <strong>${H} 公分</strong>，列出 second 階段的乘法直式！`,
+              speak: `第二階段，底面積乘以高。我們用求得的底面積 ${baseArea} 乘以水箱的高 ${H} 公分。`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr class="unit-label-row"><td colspan="3" style="text-align:center; color:var(--primary-cyan);">第二階段：底面積 × 高 (${baseArea} × ${H})</td></tr>
+                  <tr><td></td><td class="calc-glow-cyan">${baseArea}</td><td>(底面積)</td></tr>
+                  <tr><td class="op-cell calc-glow-pink">×</td><td class="calc-glow-pink">${H}</td><td>(高度)</td></tr>
+                  <tr class="border-top"><td colspan="3" style="text-align:center; font-size:0.75rem; color:var(--text-muted); font-style:italic;">步驟 3 / 4：列出第二階段算式</td></tr>
+                </table>
+              `
+            },
+            {
+              text: `<strong>得出最終容積！</strong> 經由詳細計算，我們得出最終的容積為 <strong>${vol.toFixed(0)} 立方公分 (cm³)</strong>！這相當於最多可以灌入 <strong>${(vol/1000).toFixed(3)} 公升 (L)</strong> 的水！`,
+              speak: `得出最終容積。經由詳細計算，我們得出最終的容積為 ${vol.toFixed(0)} 立方公分，相當於 ${(vol/1000).toFixed(3)} 公升。恭喜你完成容積計算！`,
+              html: `
+                <table style="font-size:0.95rem; width:100%;">
+                  <tr><td></td><td>${baseArea}</td><td></td></tr>
+                  <tr><td class="op-cell">×</td><td>${H}</td><td></td></tr>
+                  <tr class="border-top border-double-bottom" style="color:var(--accent-green); font-weight:800;"><td></td><td class="calc-glow-green">${vol.toFixed(0)}</td><td>cm³ (容積)</td></tr>
+                </table>
+              `
+            }
+          ];
+        }
 
         let currentStepIdx = 0;
         let isPlaying = false;
@@ -768,7 +818,7 @@ window.unit7 = {
                 <button class="btn-calc" id="btn-wiz-prev-72" title="上一步">◀️</button>
                 <button class="btn-calc" id="btn-wiz-play-72" style="font-size:1.25rem;" title="播放/暫停">▶</button>
                 <button class="btn-calc" id="btn-wiz-next-72" title="下一步">▶️</button>
-                <span class="calc-step-indicator" id="wiz-indicator-72">步驟 1 / 6</span>
+                <span class="calc-step-indicator" id="wiz-indicator-72">步驟 1 / ${steps.length}</span>
               </div>
               <button class="btn secondary" id="btn-exit-7-2-wizard" style="margin-top:0.4rem; padding: 0.25rem 1rem; font-size:0.8rem; border-radius:50px;">
                 🚪 退出教學，返回收據
@@ -796,7 +846,7 @@ window.unit7 = {
           });
         };
 
-        const stopAutoPlay = () => {
+                const stopAutoPlay = () => {
           isPlaying = false;
           if (playTimeout) { clearTimeout(playTimeout); playTimeout = null; }
           const playBtn = document.getElementById('btn-wiz-play-72');
