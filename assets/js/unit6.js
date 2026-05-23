@@ -143,10 +143,10 @@ window.unit6 = {
           <p>當時間需要乘以整數時，我們必須**分別將「時」與「分」相乘**，最後再進行進位：</p>
           <span class="step-equation">例如：2小時45分 × 5 ＝ ? 時 ? 分</span>
           <p style="font-size:0.95rem; line-height:1.5;">
-            1. <b>分乘法</b>：$45\text{分} \times 5 ＝ 225\text{分}$<br>
-            2. <b>時乘法</b>：$2\text{時} \times 5 ＝ 10\text{時}$<br>
-            3. <b>進位整理</b>：$225\text{分} \div 60 ＝ 3\text{時} ... 餘 45\text{分}$<br>
-            4. <b>加總答案</b>：$10\text{時} ＋ 3\text{時} ＝ 13\text{時}$，剩下 $45\text{分}$！
+            1. <b>分乘法</b>：45分 × 5 ＝ 225分<br>
+            2. <b>時乘法</b>：2時 × 5 ＝ 10時<br>
+            3. <b>進位整理</b>：225分 ➔ 3時 45分 (滿60分進位1時)<br>
+            4. <b>加總答案</b>：10時 ＋ 3時 ＝ 13時，剩下 45分！
           </p>
           <!-- 課堂風格直式運算 -->
           <div class="math-vertical-calc" style="margin-top:1rem;">
@@ -508,10 +508,10 @@ window.unit6 = {
           <p>做時間的除法時，必須**從大單位開始除**。如果除不盡，就把餘數借給小單位：</p>
           <span class="step-equation">例如：5小時20分 ÷ 4 ＝ ? 時 ? 分</span>
           <p style="font-size:0.95rem; line-height:1.5;">
-            1. <b>先除時</b>：$5\text{時} \div 4 ＝ 1\text{時} ... 餘 1\text{時}$<br>
-            2. <b>換算借位</b>：餘下的 $1\text{時} ＝ 60\text{分}$<br>
-            3. <b>合併分</b>：$60\text{分} ＋ 20\text{分} ＝ 80\text{分}$<br>
-            4. <b>再除分</b>：$80\text{分} \div 4 ＝ 20\text{分}$<br>
+            1. <b>先除時</b>：5時 ÷ 4 ＝ 1時 ... 餘 1時<br>
+            2. <b>換算借位</b>：餘下的 1時 ＝ 60分<br>
+            3. <b>合併分</b>：60分 ＋ 20分 ＝ 80分<br>
+            4. <b>再除分</b>：80分 ÷ 4 ＝ 20分<br>
             5. <b>合併答案</b>：<b>1小時 20分鐘</b>！
           </p>
         </div>
