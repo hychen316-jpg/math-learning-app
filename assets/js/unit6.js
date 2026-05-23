@@ -160,6 +160,16 @@ window.unit6 = {
             </table>
           </div>
         </div>
+        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
+          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
+          <div style="flex:1;">
+            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
+            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由臺北酷課雲名師帶領妳飛越宇宙難題！</p>
+          </div>
+          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/@CooC-Cloud', '_blank')">
+            🚀 立即前往觀看
+          </button>
+        </div>
       </div>
       
       <div class="time-machine-container card">
@@ -504,6 +514,16 @@ window.unit6 = {
             4. <b>再除分</b>：80分 ÷ 4 ＝ 20分<br>
             5. <b>合併答案</b>：<b>1小時 20分鐘</b>！
           </p>
+        </div>
+        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
+          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
+          <div style="flex:1;">
+            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
+            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由臺北酷課雲名師帶領妳飛越宇宙難題！</p>
+          </div>
+          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/@CooC-Cloud', '_blank')">
+            🚀 立即前往觀看
+          </button>
         </div>
       </div>
 
@@ -860,6 +880,16 @@ window.unit6 = {
         <div style="display:flex; gap:0.5rem; justify-content:center; margin-top:0.8rem; margin-bottom:1rem;">
           <button class="btn secondary active" id="btn-app-mode-mult" style="padding:0.4rem 1rem; font-size:0.85rem;">🔮 魔法訓練 (乘法應用)</button>
           <button class="btn secondary" id="btn-app-mode-div" style="padding:0.4rem 1rem; font-size:0.85rem;">🧚 小精靈看守 (除法應用)</button>
+        </div>
+        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:0.8rem; margin-bottom:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
+          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
+          <div style="flex:1;">
+            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
+            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由臺北酷課雲名師帶領妳飛越宇宙難題！</p>
+          </div>
+          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/@CooC-Cloud', '_blank')">
+            🚀 立即前往觀看
+          </button>
         </div>
 
         <!-- 魔法互動面板 -->
