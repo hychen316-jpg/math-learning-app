@@ -129,7 +129,7 @@ window.unit9 = {
         </div>
 
         <!-- 3D 摺紙舞台 -->
-        <div class="surface-stage" style="height:250px;">
+        <div class="surface-stage" style="height:350px;">
           <div class="folding-box-3d" id="folding-box" style="
             transform: rotateX(-30deg) rotateY(40deg);
             transform-style: preserve-3d;

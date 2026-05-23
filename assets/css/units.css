@@ -545,7 +545,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* 3D 摺紙包裝容器 */
