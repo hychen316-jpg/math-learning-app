@@ -116,16 +116,6 @@ window.unit7 = {
           <span class="step-equation">高 (有蓋) ➔ 扣除兩個厚度 (上下蓋各一)</span>
           <span class="step-equation">高 (無蓋) ➔ 扣除一個厚度 (只有底部板子)</span>
         </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+認識容積', '_blank')">
-            🚀 立即前往觀看
-          </button>
-        </div>
       </div>
 
       <div class="volume-sandbox-container card">
@@ -455,16 +445,6 @@ window.unit7 = {
           <p><strong>容量</strong>是能裝水的液體量，常用<strong>毫升(ml)</strong>與<strong>公升(L)</strong>。</p>
           <span class="step-equation">黃金等式：1 毫升 (ml) ＝ 1 立方公分 (cm³)</span>
           <span class="step-equation">黃金等式：1 公升 (L) ＝ 1000 毫升 (ml) ＝ 1000 cm³</span>
-        </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+容積與容量的關係', '_blank')">
-            🚀 立即前往觀看
-          </button>
         </div>
       </div>
 
@@ -890,16 +870,6 @@ window.unit7 = {
           <p style="font-size:0.95rem; margin-top:0.5rem;">
             所以，增加的毫升數＝物體的立方公分體積！
           </p>
-        </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+不規則物體的體積', '_blank')">
-            🚀 立即前往觀看
-          </button>
         </div>
       </div>
 

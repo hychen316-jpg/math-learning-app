@@ -116,16 +116,6 @@ window.unit8 = {
             • 小數比率：$6 \div 10 ＝ 0.6$
           </p>
         </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+認識比率', '_blank')">
-            🚀 立即前往觀看
-          </button>
-        </div>
       </div>
 
       <div class="ratio-bakery-container card" id="bakery-sandbox-area-81">
@@ -211,16 +201,6 @@ window.unit8 = {
             • 小數 $0.35 ➔ \frac{35}{100} ➔ 35\%$
           </p>
         </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+認識百分比', '_blank')">
-            🚀 立即前往觀看
-          </button>
-        </div>
       </div>
 
       <div class="volume-sandbox-container card" style="display:flex; flex-direction:column; align-items:center;">
@@ -304,16 +284,6 @@ window.unit8 = {
           <p><strong>Off (折扣/減價)</strong>：是指**扣掉**百分之多少，剩下的才是售價！</p>
           <span class="step-equation">20% off ➔ 便宜 20%，只需付 80% (原價 × 0.8)</span>
           <span class="step-equation">30% off ➔ 便宜 30%，只需付 70% (原價 × 0.7)</span>
-        </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+百分比與折扣的應用', '_blank')">
-            🚀 立即前往觀看
-          </button>
         </div>
       </div>
 

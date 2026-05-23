@@ -121,16 +121,6 @@ window.unit10 = {
             • <b>平行四邊形</b>：<b>0 條</b>對稱軸 (對摺後對角無法重合！)
           </p>
         </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+認識線對稱圖形', '_blank')">
-            🚀 立即前往觀看
-          </button>
-        </div>
       </div>
 
       <div class="symmetry-sandbox-container card" style="align-items:center;">
@@ -287,16 +277,6 @@ window.unit10 = {
           <p>2. <b>垂直鐵則</b>：對稱點的連線（如 AA'）會<strong>垂直</strong>於對稱軸！</p>
           <p>3. <b>對稱邊相等</b>、<b>對稱角相等</b>。</p>
         </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+對稱點對稱邊與對稱角', '_blank')">
-            🚀 立即前往觀看
-          </button>
-        </div>
       </div>
 
       <div class="symmetry-sandbox-container card" style="align-items:center;">
@@ -416,16 +396,6 @@ window.unit10 = {
           <p>2. <b>垂直等距量測</b>：量出各點到對稱軸的格數。</p>
           <p>3. <b>對應打點</b>：在對稱軸另一側，畫上相同距離的點。</p>
           <p>4. <b>連線完成</b>：把新畫出的點依序連起來，大功告成！</p>
-        </div>
-        <div class="youtube-helper-card" style="display:flex; align-items:center; gap:0.8rem; background:rgba(255, 0, 0, 0.08); border:1.5px solid rgba(255, 0, 0, 0.3); border-radius:16px; padding:0.8rem 1.2rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,0,0.15); text-align:left;">
-          <span style="font-size:2rem; filter:drop-shadow(0 0 5px rgba(255,0,0,0.6));">📺</span>
-          <div style="flex:1;">
-            <h4 style="color:#ff4b4b; margin:0 0 0.2rem 0; font-size:1.05rem; font-weight:700;">📺 宇宙魔法 YouTube 教學影片</h4>
-            <p style="color:var(--text-secondary); font-size:0.85rem; margin:0; line-height:1.4;">想看生動的線上觀念解說嗎？由均一教育平台與酷課雲名師帶領妳飛越宇宙難題！</p>
-          </div>
-          <button class="btn secondary" style="border-color:#ff4b4b; color:#ff4b4b; background:rgba(255,0,0,0.05); font-size:0.85rem; padding:0.4rem 1rem; border-radius:50px; cursor:pointer; font-weight:700; white-space:nowrap; transition: var(--transition-smooth);" onmouseover="this.style.background='rgba(255,0,0,0.15)'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.3)'" onmouseout="this.style.background='rgba(255,0,0,0.05)'; this.style.boxShadow='none'" onclick="window.open('https://www.youtube.com/results?search_query=均一教育平台+五年級+畫線對稱圖形', '_blank')">
-            🚀 立即前往觀看
-          </button>
         </div>
       </div>
 
