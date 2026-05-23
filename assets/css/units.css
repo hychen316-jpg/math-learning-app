@@ -1,0 +1,1073 @@
+/* Unit Specific CSS: Interactive Manipulatives and Visual Elements */
+
+/* ---------------------------------------------------- */
+/* 單元六：時間的乘除 (Time Multiplication/Division) */
+/* ---------------------------------------------------- */
+.time-machine-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.time-setter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  background: rgba(0,0,0,0.3);
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.time-input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.time-input-field label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-cyan);
+}
+
+.time-setter-ctrl {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  width: 100%;
+}
+
+.time-setter-ctrl button {
+  background: none;
+  border: none;
+  color: white;
+  width: 32px;
+  height: 38px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.time-setter-ctrl button:hover {
+  background: rgba(0, 242, 254, 0.15);
+}
+
+.time-setter-ctrl input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  width: 30px;
+  font-family: var(--font-family);
+}
+
+/* 運算機器動畫顯示區 */
+.time-op-display-board {
+  background: radial-gradient(circle at center, rgba(30, 36, 75, 0.8) 0%, rgba(10, 11, 28, 0.95) 100%);
+  border: 2px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  min-height: 200px;
+  justify-content: center;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.op-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.op-time-box {
+  background: rgba(0, 242, 254, 0.08);
+  border: 1.5px solid var(--primary-cyan);
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  color: var(--accent-yellow);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+.op-symbol {
+  font-size: 1.8rem;
+  color: var(--accent-pink);
+}
+
+.op-multiplier {
+  background: rgba(255, 42, 133, 0.08);
+  border: 1.5px solid var(--accent-pink);
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  color: white;
+}
+
+/* 進位展示卡片 */
+.carry-flow-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  animation: slide-up-feedback 0.4s ease;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.carry-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.carry-card.active {
+  border-color: var(--accent-green);
+  background: rgba(57, 255, 20, 0.08);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.carry-card.highlight {
+  border-color: var(--accent-yellow);
+  background: rgba(255, 230, 0, 0.08);
+  animation: pulse-card 1s infinite alternate;
+}
+
+@keyframes pulse-card {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.carry-arrow {
+  color: var(--primary-cyan);
+  font-size: 1.5rem;
+}
+
+/* ---------------------------------------------------- */
+/* 單元七：容積 (Capacity / Volume) */
+/* ---------------------------------------------------- */
+.volume-sandbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sandbox-controls {
+  background: rgba(0,0,0,0.3);
+  padding: 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.slider-header .dim-label {
+  color: var(--text-secondary);
+}
+
+.slider-header .dim-val {
+  color: var(--primary-cyan);
+}
+
+.slider-group input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  outline: none;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--primary-blue) 100%);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+  transition: transform 0.1s;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.toggle-group label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* 3D 水箱渲染舞台 */
+.stage-3d {
+  width: 100%;
+  height: 320px;
+  background: radial-gradient(circle at center, rgba(16, 24, 70, 0.5) 0%, rgba(5, 6, 15, 0.9) 100%);
+  border-radius: 20px;
+  border: 1.5px solid var(--glass-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 700px; /* 3D 透視深度 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D 盒裝容器 */
+.tank-3d {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-25deg) rotateY(35deg); /* 斜角投影 */
+  transition: transform 0.5s ease-out;
+}
+
+/* 六個面 */
+.tank-face {
+  position: absolute;
+  border: 1.5px solid rgba(0, 242, 254, 0.8);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  transition: var(--transition-smooth);
+}
+
+/* 外壁與內壁視覺差（容積厚度特化） */
+.tank-face.outer {
+  background: rgba(0, 242, 254, 0.05);
+}
+
+.tank-face.inner {
+  border: 1px dashed rgba(255, 126, 0, 0.6);
+  background: rgba(255, 126, 0, 0.03);
+}
+
+/* CSS 3D 旋轉定位 - 外部箱子 */
+.tank-face.outer.front  { transform: translateZ(var(--tz-out)); width: var(--w-out); height: var(--h-out); left: calc(50% - var(--w-out)/2); top: calc(50% - var(--h-out)/2); }
+.tank-face.outer.back   { transform: rotateY(180deg) translateZ(var(--tz-out)); width: var(--w-out); height: var(--h-out); left: calc(50% - var(--w-out)/2); top: calc(50% - var(--h-out)/2); }
+.tank-face.outer.left   { transform: rotateY(-90deg) translateZ(var(--tx-out)); width: var(--d-out); height: var(--h-out); left: calc(50% - var(--d-out)/2); top: calc(50% - var(--h-out)/2); }
+.tank-face.outer.right  { transform: rotateY(90deg) translateZ(var(--tx-out)); width: var(--d-out); height: var(--h-out); left: calc(50% - var(--d-out)/2); top: calc(50% - var(--h-out)/2); }
+.tank-face.outer.top    { transform: rotateX(90deg) translateZ(var(--ty-out)); width: var(--w-out); height: var(--d-out); left: calc(50% - var(--w-out)/2); top: calc(50% - var(--d-out)/2); }
+.tank-face.outer.bottom { transform: rotateX(-90deg) translateZ(var(--ty-out)); width: var(--w-out); height: var(--d-out); left: calc(50% - var(--w-out)/2); top: calc(50% - var(--d-out)/2); background: rgba(0, 242, 254, 0.2); }
+
+/* CSS 3D 旋轉定位 - 內部箱子 (厚度內壁) */
+.tank-face.inner.front  { transform: translateZ(var(--tz-in)); width: var(--w-in); height: var(--h-in); left: calc(50% - var(--w-in)/2); top: calc(50% - var(--h-in)/2); }
+.tank-face.inner.back   { transform: rotateY(180deg) translateZ(var(--tz-in)); width: var(--w-in); height: var(--h-in); left: calc(50% - var(--w-in)/2); top: calc(50% - var(--h-in)/2); }
+.tank-face.inner.left   { transform: rotateY(-90deg) translateZ(var(--tx-in)); width: var(--d-in); height: var(--h-in); left: calc(50% - var(--d-in)/2); top: calc(50% - var(--h-in)/2); }
+.tank-face.inner.right  { transform: rotateY(90deg) translateZ(var(--tx-in)); width: var(--d-in); height: var(--h-in); left: calc(50% - var(--d-in)/2); top: calc(50% - var(--h-in)/2); }
+.tank-face.inner.top    { transform: rotateX(90deg) translateZ(var(--ty-in)); width: var(--w-in); height: var(--d-in); left: calc(50% - var(--w-in)/2); top: calc(50% - var(--d-in)/2); }
+.tank-face.inner.bottom { transform: rotateX(-90deg) translateZ(var(--ty-in)); width: var(--w-in); height: var(--d-in); left: calc(50% - var(--w-in)/2); top: calc(50% - var(--d-in)/2); background: rgba(255, 126, 0, 0.15); }
+
+/* 水流注水模擬 */
+.water-mass {
+  position: absolute;
+  background: linear-gradient(to top, rgba(0, 162, 255, 0.6), rgba(0, 242, 254, 0.4));
+  border: 1px solid rgba(0, 242, 254, 0.7);
+  bottom: 0;
+  width: 100%;
+  height: 0%; /* 由 JS 動態拉高 */
+  transition: height 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.water-surface {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 242, 254, 0.8);
+  transform: rotateX(90deg) translateZ(0px); /* 保持水面平鋪 */
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+}
+
+/* 容量資訊顯示板 */
+.volume-info-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.vol-stat {
+  background: rgba(0,0,0,0.3);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.vol-stat h4 {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.vol-stat .number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+}
+
+.vol-stat .unit {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------- */
+/* 單元八：比率與百分比 (Ratios & Percentages) */
+/* ---------------------------------------------------- */
+.ratio-bakery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 烘焙坊盤子 */
+.bakery-plate {
+  background: radial-gradient(circle at center, rgba(40, 48, 90, 0.6) 0%, rgba(15, 18, 40, 0.9) 100%);
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
+}
+
+.macaron-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+
+.macaron-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.macaron-item::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: rgba(255,255,255,0.25);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.macaron-item.flavor-strawberry {
+  background: radial-gradient(circle at 35% 35%, #ff8a80, #ff5252);
+  box-shadow: 0 4px 10px rgba(255, 82, 82, 0.4);
+}
+
+.macaron-item.flavor-blueberry {
+  background: radial-gradient(circle at 35% 35%, #80d8ff, #40c4ff);
+  box-shadow: 0 4px 10px rgba(64, 196, 255, 0.4);
+}
+
+.macaron-item:hover {
+  transform: scale(1.15) rotate(10deg);
+}
+
+/* 甜點數據看板 */
+.bakery-stats-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 500px) {
+  .bakery-stats-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bakery-stat-card {
+  background: rgba(0,0,0,0.3);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.bakery-stat-card .label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.bakery-stat-card .val {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Fredoka', sans-serif;
+  color: var(--primary-cyan);
+}
+
+/* 折扣旋轉輪盤 */
+.discount-wheel-wrapper {
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.discount-layout {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.wheel-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.wheel-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+  transition: transform 3s cubic-bezier(0.1, 0.8, 0.1, 1);
+  transform: rotate(0deg);
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 30px;
+  background: var(--accent-pink);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  z-index: 5;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.discount-calc-bill {
+  background: rgba(0,0,0,0.4);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  min-width: 200px;
+  border-left: 5px solid var(--accent-pink);
+}
+
+.discount-calc-bill p {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.discount-calc-bill .bold-result {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-yellow);
+}
+
+/* ---------------------------------------------------- */
+/* 單元九：表面積 (Surface Area) */
+/* ---------------------------------------------------- */
+.surface-area-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.surface-stage {
+  width: 100%;
+  height: 320px;
+  background: radial-gradient(circle at center, rgba(16, 24, 70, 0.5) 0%, rgba(5, 6, 15, 0.9) 100%);
+  border-radius: 20px;
+  border: 1.5px solid var(--glass-border);
+  perspective: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D 摺紙包裝容器 */
+.folding-box-3d {
+  width: 100px;
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(40deg);
+  transition: transform 0.5s ease-out;
+}
+
+/* 摺紙面 */
+.fold-face {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  transition: transform 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+  backface-visibility: visible;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+}
+
+/* 六個顏色區分面 (ADHD 投影補齊法視覺高亮) */
+.face-up     { background: rgba(255, 82, 82, 0.6); }   /* 紅：上下對稱面 */
+.face-down   { background: rgba(255, 82, 82, 0.6); }
+.face-front  { background: rgba(64, 196, 255, 0.6); }  /* 藍：前後對稱面 */
+.face-back   { background: rgba(64, 196, 255, 0.6); }
+.face-left   { background: rgba(105, 240, 174, 0.6); } /* 綠：左右對稱面 */
+.face-right  { background: rgba(105, 240, 174, 0.6); }
+
+/* 展開圖按鈕控制欄 */
+.folder-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  padding: 1rem;
+  border-radius: 16px;
+}
+
+/* 面解說看板 */
+.area-breakdown-card {
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.area-breakdown-card h4 {
+  font-size: 1.2rem;
+  color: var(--accent-yellow);
+  margin-bottom: 1rem;
+}
+
+.area-row-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.area-row-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--text-muted);
+}
+
+.area-row-item.up-down { border-left-color: rgba(255, 82, 82, 1); }
+.area-row-item.front-back { border-left-color: rgba(64, 196, 255, 1); }
+.area-row-item.left-right { border-left-color: rgba(105, 240, 174, 1); }
+
+.area-row-item .label {
+  font-weight: 700;
+}
+
+.area-row-item .math {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--text-secondary);
+}
+
+/* ---------------------------------------------------- */
+/* 單元十：線對稱圖形 (Line Symmetry) */
+/* ---------------------------------------------------- */
+.symmetry-sandbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.canvas-toolbar {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgba(0,0,0,0.3);
+  padding: 0.8rem;
+  border-radius: 16px;
+}
+
+.tool-left {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.brush-color-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.brush-color-btn:hover {
+  transform: scale(1.15);
+}
+
+.brush-color-btn.active {
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.btn-pink   { background-color: var(--accent-pink); }
+.btn-cyan   { background-color: var(--primary-cyan); }
+.btn-yellow { background-color: var(--accent-yellow); }
+.btn-green  { background-color: var(--accent-green); }
+
+/* 對稱畫布本體 */
+.paint-canvas-wrapper {
+  background: radial-gradient(circle at center, rgba(30, 35, 70, 0.8) 0%, rgba(10, 12, 28, 0.95) 100%);
+  border: 2px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 340px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+/* 網格塗鴉畫布 */
+.pixel-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  width: 288px;
+  height: 288px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.grid-cell {
+  border: 0.5px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.grid-cell:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* 對稱極光線 */
+.symmetry-axis-line {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+.symmetry-axis-line.axis-vertical {
+  top: 0;
+  left: calc(50% - 1.5px);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-cyan), var(--accent-pink));
+}
+
+.symmetry-axis-line.axis-horizontal {
+  top: calc(50% - 1.5px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-cyan), var(--accent-pink));
+}
+
+/* 對稱知識引導卡 */
+.symmetry-tip-card {
+  background: rgba(0, 242, 254, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.symmetry-tip-card .emoji {
+  font-size: 2.2rem;
+  animation: flutter-wing 1s ease-in-out infinite alternate;
+}
+
+@keyframes flutter-wing {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(0.7) rotate(5deg); }
+}
+
+.symmetry-tip-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* 線對稱圖形測驗用的網格靜態圖片 */
+.symmetry-quiz-preview {
+  width: 180px;
+  height: 180px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  border: 1.5px solid var(--glass-border);
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------- */
+/* 國小課堂風格：直式與橫式運算、筆記本思路高亮樣式 */
+/* ---------------------------------------------------- */
+.math-vertical-calc {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(0, 242, 254, 0.2);
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Fredoka', 'Courier New', monospace;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.math-vertical-calc table {
+  border-collapse: collapse;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.math-vertical-calc td {
+  padding: 4px 10px;
+  text-align: right;
+  min-width: 35px;
+}
+
+.math-vertical-calc .unit-label-row td {
+  color: var(--primary-cyan);
+  font-size: 0.9rem;
+  text-align: center;
+  border-bottom: 1px dashed rgba(255,255,255,0.1);
+}
+
+.math-vertical-calc .op-cell {
+  text-align: left;
+  color: var(--accent-pink);
+  font-size: 1.3rem;
+}
+
+.math-vertical-calc .border-top {
+  border-top: 2px solid var(--text-primary);
+}
+
+.math-vertical-calc .border-double-bottom {
+  border-bottom: 4px double var(--primary-cyan);
+}
+
+.math-vertical-calc .carry-row td {
+  color: var(--accent-yellow);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* 小學聯絡簿格線學習卡 */
+.notebook-style {
+  background: linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px) 0 0 / 100% 28px, var(--glass-bg);
+  border-left: 6px solid var(--accent-yellow) !important;
+  line-height: 28px !important;
+  font-size: 1rem;
+  padding: 1.5rem !important;
+  color: var(--text-secondary);
+}
+
+.notebook-style h4 {
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+  color: var(--accent-yellow);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notebook-style p {
+  margin-bottom: 0.8rem;
+}
+
+/* 橫式步驟高亮 */
+.step-equation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  color: var(--accent-green);
+  margin: 0.5rem 0;
+  border-left: 3px solid var(--accent-green);
+}
+
+/* ---------------------------------------------------- */
+/* 直式運算魔法播放器 (Vertical Calc Playback Player) */
+/* ---------------------------------------------------- */
+.calc-wizard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  margin-top: 1rem;
+  animation: slide-up-feedback 0.4s ease;
+  position: relative;
+}
+
+/* 控制列 */
+.calc-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  margin-top: 0.5rem;
+}
+
+.calc-controls .btn-calc {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.calc-controls .btn-calc:hover:not(:disabled) {
+  background: rgba(0, 242, 254, 0.2);
+  color: var(--primary-cyan);
+}
+
+.calc-controls .btn-calc:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.calc-step-indicator {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* 小精靈氣泡框 */
+.calc-elf-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(255,255,255,0.03);
+  border: 1.5px solid var(--glass-border);
+  padding: 0.8rem 1.2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.calc-elf-avatar {
+  font-size: 2.2rem;
+  animation: elf-bob 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes elf-bob {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-5px) rotate(3deg); }
+}
+
+.calc-elf-bubble {
+  position: relative;
+  flex: 1;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.calc-elf-bubble strong {
+  color: var(--accent-yellow);
+}
+
+/* 發光高亮單元格 */
+.math-vertical-calc td.calc-glow-cyan {
+  background: rgba(0, 242, 254, 0.15) !important;
+  color: var(--primary-cyan) !important;
+  box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.4);
+  animation: cell-glow-pulse-cyan 1s infinite alternate;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.math-vertical-calc td.calc-glow-pink {
+  background: rgba(255, 42, 133, 0.15) !important;
+  color: var(--accent-pink) !important;
+  box-shadow: inset 0 0 10px rgba(255, 42, 133, 0.4);
+  animation: cell-glow-pulse-pink 1s infinite alternate;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.math-vertical-calc td.calc-glow-yellow {
+  background: rgba(255, 230, 0, 0.15) !important;
+  color: var(--accent-yellow) !important;
+  box-shadow: inset 0 0 10px rgba(255, 230, 0, 0.4);
+  animation: cell-glow-pulse-yellow 1s infinite alternate;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.math-vertical-calc td.calc-glow-green {
+  background: rgba(57, 255, 20, 0.15) !important;
+  color: var(--accent-green) !important;
+  box-shadow: inset 0 0 10px rgba(57, 255, 20, 0.4);
+  animation: cell-glow-pulse-green 1s infinite alternate;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.math-vertical-calc td.calc-dim {
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+
+@keyframes cell-glow-pulse-cyan {
+  0% { text-shadow: 0 0 4px var(--primary-cyan); }
+  100% { text-shadow: 0 0 12px var(--primary-cyan); }
+}
+@keyframes cell-glow-pulse-pink {
+  0% { text-shadow: 0 0 4px var(--accent-pink); }
+  100% { text-shadow: 0 0 12px var(--accent-pink); }
+}
+@keyframes cell-glow-pulse-yellow {
+  0% { text-shadow: 0 0 4px var(--accent-yellow); }
+  100% { text-shadow: 0 0 12px var(--accent-yellow); }
+}
+@keyframes cell-glow-pulse-green {
+  0% { text-shadow: 0 0 4px var(--accent-green); }
+  100% { text-shadow: 0 0 12px var(--accent-green); }
+}
+
+/* 飛行數字動畫 */
+.flying-number {
+  position: absolute;
+  z-index: 999;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 800;
+  color: var(--accent-yellow);
+  text-shadow: 0 0 10px var(--accent-yellow);
+  pointer-events: none;
+  font-size: 1.4rem;
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 小數點彩虹跳躍動畫 */
+.rainbow-dot {
+  position: absolute;
+  z-index: 1000;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-pink);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-pink), 0 0 20px var(--accent-pink);
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 7-2 內壁液體覆蓋層樣式 */
+.water-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--h-water-overlay, 0%);
+  background: linear-gradient(to top, rgba(0, 162, 255, 0.45) 0%, rgba(0, 242, 254, 0.35) 100%);
+  border-top: 1.5px solid rgba(0, 242, 254, 0.85);
+  transition: height 0.3s ease-out;
+}
+

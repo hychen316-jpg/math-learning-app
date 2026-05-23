@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太空數學冒險：國小五年級翰林版下學期數學</title>
+  <!-- 引入可愛有溫馨感的 Google 兒童友善字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <!-- 引入樣式表 -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/units.css">
+</head>
+<body>
+  <!-- 背景星空特效粒子畫布 -->
+  <canvas id="starfield-bg"></canvas>
+
+  <!-- 全域頂部狀態列 -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="emoji">🚀</span>
+      <h1>太空數學冒險</h1>
+    </div>
+    <div class="user-stats">
+      <div class="stat-badge" id="badge-stars">
+        <span class="emoji">⭐</span>
+        <span class="value" id="star-count">0</span>
+      </div>
+      <div class="stat-badge" id="badge-trophies">
+        <span class="emoji">🏆</span>
+        <span class="value" id="badge-count">0</span>
+      </div>
+      <button id="btn-reset-adventure" class="btn secondary" style="padding: 0.35rem 0.8rem; font-size: 0.85rem; border-radius: 50px; margin-left: 0.5rem; cursor: pointer; box-shadow: none;" title="重設所有星星與勳章">
+        🔄 重設進度
+      </button>
+    </div>
+  </header>
+
+  <!-- 主要內容區 (SPA 容器) -->
+  <main id="app-container">
+    
+    <!-- 1. 冒險星空地圖頁面 (Landing / Map View) -->
+    <section id="view-map" class="app-view active">
+      <div class="intro-container">
+        <h2>✨ 嗨！準備好開始妳的太空數學冒險了嗎？ ✨</h2>
+        <p>點擊下方神秘的數學星球，解鎖驚奇互動教具，打敗太空怪獸收集閃亮星星吧！</p>
+      </div>
+
+      <!-- 太空地圖 SVG 容器 -->
+      <div class="map-wrapper">
+        <div class="space-map">
+          <!-- 星球與軌道 -->
+          <div class="planet-orbit orbit-1"></div>
+          <div class="planet-orbit orbit-2"></div>
+          <div class="planet-orbit orbit-3"></div>
+          
+          <!-- 星球按鈕們 -->
+          <!-- 單元六：時間的乘除 -->
+          <button class="planet-btn" id="btn-planet-6" data-unit="6">
+            <div class="planet-avatar planet-time">
+              <div class="planet-ring"></div>
+              <div class="planet-face">
+                <div class="eye"></div><div class="eye"></div>
+                <div class="smile"></div>
+              </div>
+              <div class="planet-decor time-clock">🕒</div>
+            </div>
+            <div class="planet-info">
+              <span class="unit-num">單元 6</span>
+              <h3>時間的乘除</h3>
+              <span class="badge-status locked">未解鎖</span>
+            </div>
+          </button>
+
+          <!-- 單元七：容積 -->
+          <button class="planet-btn" id="btn-planet-7" data-unit="7">
+            <div class="planet-avatar planet-volume">
+              <div class="planet-decor volume-water">💧</div>
+              <div class="planet-face">
+                <div class="eye"></div><div class="eye"></div>
+                <div class="smile"></div>
+              </div>
+            </div>
+            <div class="planet-info">
+              <span class="unit-num">單元 7</span>
+              <h3>容積</h3>
+              <span class="badge-status locked">未解鎖</span>
+            </div>
+          </button>
+
+          <!-- 單元八：比率與百分比 -->
+          <button class="planet-btn" id="btn-planet-8" data-unit="8">
+            <div class="planet-avatar planet-ratio">
+              <div class="planet-decor ratio-pie">🍕</div>
+              <div class="planet-face">
+                <div class="eye"></div><div class="eye"></div>
+                <div class="smile"></div>
+              </div>
+            </div>
+            <div class="planet-info">
+              <span class="unit-num">單元 8</span>
+              <h3>比率與百分比</h3>
+              <span class="badge-status locked">未解鎖</span>
+            </div>
+          </button>
+
+          <!-- 單元九：表面積 -->
+          <button class="planet-btn" id="btn-planet-9" data-unit="9">
+            <div class="planet-avatar planet-surface">
+              <div class="planet-decor surface-box">📦</div>
+              <div class="planet-face">
+                <div class="eye"></div><div class="eye"></div>
+                <div class="smile"></div>
+              </div>
+            </div>
+            <div class="planet-info">
+              <span class="unit-num">單元 9</span>
+              <h3>表面積</h3>
+              <span class="badge-status locked">未解鎖</span>
+            </div>
+          </button>
+
+          <!-- 單元十：線對稱圖形 -->
+          <button class="planet-btn" id="btn-planet-10" data-unit="10">
+            <div class="planet-avatar planet-symmetry">
+              <div class="planet-decor symmetry-butterfly">🦋</div>
+              <div class="planet-face">
+                <div class="eye"></div><div class="eye"></div>
+                <div class="smile"></div>
+              </div>
+            </div>
+            <div class="planet-info">
+              <span class="unit-num">單元 10</span>
+              <h3>線對稱圖形</h3>
+              <span class="badge-status locked">未解鎖</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 成就與激勵看板 -->
+      <div class="achievements-section">
+        <h3>🏆 我的冒險成就勳章 🏆</h3>
+        <div class="badges-container" id="earned-badges">
+          <!-- 這裡會動態生成解鎖的勳章 -->
+          <div class="badge-card locked" id="badge-6-card">
+            <div class="badge-icon">🕒</div>
+            <p>時間魔法師</p>
+          </div>
+          <div class="badge-card locked" id="badge-7-card">
+            <div class="badge-icon">💧</div>
+            <p>水箱工程師</p>
+          </div>
+          <div class="badge-card locked" id="badge-8-card">
+            <div class="badge-icon">🍰</div>
+            <p>甜點烘焙大師</p>
+          </div>
+          <div class="badge-card locked" id="badge-9-card">
+            <div class="badge-icon">🎁</div>
+            <p>空間幾何學家</p>
+          </div>
+          <div class="badge-card locked" id="badge-10-card">
+            <div class="badge-icon">🦋</div>
+            <p>鏡像魔法使</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 單一單元載入範本容器 -->
+    <section id="view-unit" class="app-view">
+      <div class="unit-header-nav">
+        <button id="btn-back-to-map" class="btn secondary">
+          <span class="emoji">🌌</span> 返回宇宙地圖
+        </button>
+        <div class="unit-title-area">
+          <span class="unit-tag" id="current-unit-tag">單元 X</span>
+          <h2 id="current-unit-title">載入中...</h2>
+        </div>
+      </div>
+
+      <!-- 學習與挑戰雙分頁導覽 -->
+      <div class="unit-tabs">
+        <button class="tab-btn active" id="tab-learn" data-tab="learn">
+          <span class="emoji">📖</span> 探索魔法學院
+        </button>
+        <button class="tab-btn" id="tab-quiz" data-tab="quiz">
+          <span class="emoji">👾</span> 挑戰宇宙怪獸
+        </button>
+      </div>
+
+      <!-- 分頁內容區 -->
+      <div class="tab-content">
+        
+        <!-- A. 學習魔法教具區 -->
+        <div id="content-learn" class="tab-pane active">
+          <!-- 動態載入各單元的教學卡片與教具 -->
+          <div class="lesson-layout" id="lesson-dynamic-area">
+             <!-- 這裡會由 JS 動態填充對應單元的教具 -->
+          </div>
+        </div>
+
+        <!-- B. 題目挑戰測驗區 -->
+        <div id="content-quiz" class="tab-pane">
+          <div class="quiz-container">
+            <!-- 關卡進度與小怪獸圖案 -->
+            <div class="quiz-progress-bar-wrapper">
+              <div class="progress-labels">
+                <span>挑戰進度:</span>
+                <span id="quiz-progress-text">1 / 3</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" id="quiz-progress-fill" style="width: 33%"></div>
+              </div>
+            </div>
+
+            <!-- 題目卡片 -->
+            <div class="quiz-card card">
+              <div class="quiz-monster">
+                <div class="monster-avatar" id="quiz-monster-pic">👾</div>
+                <div class="monster-bubble" id="quiz-monster-bubble">來挑戰我吧！</div>
+              </div>
+              <div class="quiz-question" id="quiz-question-text">
+                讀取中...
+              </div>
+
+              <!-- 互動式輔助作答小黑板 (ADHD 可視化提示) -->
+              <div class="quiz-visual-hint-area" id="quiz-visual-hint">
+                <!-- 動態注入圖解提示 -->
+              </div>
+
+              <!-- 答案選項 (多選或填空) -->
+              <div class="quiz-answers" id="quiz-answers-container">
+                <!-- 動態注入選項按鈕 -->
+              </div>
+              
+              <!-- 填空題輸入框 (如果是填空題) -->
+              <div class="quiz-input-container hidden" id="quiz-input-box">
+                <input type="number" id="quiz-typed-answer" placeholder="請輸入答案" step="any">
+                <span class="quiz-unit-label" id="quiz-unit-label"></span>
+                <button class="btn primary" id="btn-submit-answer">確認送出</button>
+              </div>
+
+              <!-- 即時回饋回覆板 -->
+              <div class="feedback-panel hidden" id="quiz-feedback-panel">
+                <div class="feedback-icon" id="feedback-emoji">🎉</div>
+                <div class="feedback-text">
+                  <h4 id="feedback-title">答對了！太厲害了！</h4>
+                  <p id="feedback-detail">詳細解釋...</p>
+                </div>
+                <button class="btn primary" id="btn-next-question">下一題 ➔</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 全域祝賀覆蓋畫面 (Confetti Canvas) -->
+  <div id="celebration-overlay" class="overlay hidden">
+    <div class="celebration-box card">
+      <div class="celebration-emoji">👑</div>
+      <h2>恭喜妳！完成這個單元！</h2>
+      <p id="celebration-badge-text">解鎖了「時間魔法師」勳章！</p>
+      <div class="achievement-badge-showcase" id="celebration-badge-show">🕒</div>
+      <button class="btn primary" id="btn-close-celebration">回到宇宙地圖</button>
+    </div>
+    <canvas id="confetti-canvas"></canvas>
+  </div>
+
+  <!-- 提示音與背景音樂開關 (ADHD 音量及干擾友善控管) -->
+  <div class="audio-control-fixed">
+    <button id="btn-toggle-voice" class="btn-voice-active" title="開關語音讚美">
+      🔊 語音: 開
+    </button>
+  </div>
+
+  <!-- 載入核心與單元腳本 -->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/unit6.js"></script>
+  <script src="assets/js/unit7.js"></script>
+  <script src="assets/js/unit8.js"></script>
+  <script src="assets/js/unit9.js"></script>
+  <script src="assets/js/unit10.js"></script>
+</body>
+</html>
